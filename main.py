@@ -12,8 +12,12 @@ win.setWindowTitle('TISA Scoreboard')
 def loginin():
     if Username.text() == 'SRAA' and Password.text() == 'TISA2021':
         print('ok')
-        NewWindow = QMainWindow()
-        NewWindow.show()
+        Userlabel.hide()
+        Passlabel.hide()
+        Username.hide()
+        Password.hide()
+        Login.hide()
+        MySuperCoolControl.show()
 
 
 
@@ -54,7 +58,14 @@ Login.setText('Login')
 Login.move(710, 530)
 Login.clicked.connect(loginin)
 
+MySuperCoolControl = QtWidgets.QLabel(win)
+MySuperCoolControl.setFont(font)
+MySuperCoolControl.resize(400,70)
+MySuperCoolControl.move(100, 100)
+MySuperCoolControl.setText('My App will start here!')
+MySuperCoolControl.hide()
 
 
 win.show()
+
 sys.exit(app.exec_())
